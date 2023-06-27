@@ -1,5 +1,5 @@
 const frisby = require('frisby');
-const api_key = 'API_KEY' //use your api_key
+const API_KEY = process.env.API_KEY
 
 describe('30 days of Postman - Day 04: Authorization', () => {
     it('Send get request with headers', function () {
@@ -7,7 +7,7 @@ describe('30 days of Postman - Day 04: Authorization', () => {
           .setup({
             request: {
               headers: {
-                'x-api-key': api_key
+                'x-api-key': API_KEY
               }
             }
           })
@@ -23,7 +23,7 @@ describe('30 days of Postman - Day 04: Authorization', () => {
 
     it('Send get request with parametres', function () {
       return frisby
-        .get(`https://api.getpostman.com/collections?apikey=${api_key}`)
+        .get(`https://api.getpostman.com/collections?apikey=${API_KEY}`)
         .expect('status', 200)
         .then((result) => {
           let collections = result.json.collections;
