@@ -22,7 +22,7 @@ describe('30 days of Postman - Day 13: Newman', () => {
             if (Number(element.average_height) > 100) {
                 talls++
             }
+        })
         console.log(`The number of species taller 100: ${talls}`)
-          })
     })
 })
