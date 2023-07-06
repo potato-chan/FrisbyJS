@@ -3,9 +3,9 @@ const randomWords = require('better-random-words');
 const moment = require('moment')
 
 describe('30 days of Postman - Day 24: Using libraries', () => {
-    it('Status code is 200. Response contains random generated word.', () => {
+    it('Status code is 200. Response contains random generated word.', async () => {
         var word = randomWords()
-        return frisby.get(`https://api.chucknorris.io/jokes/search?query=${word}`)
+        const result = await frisby.get(`https://api.chucknorris.io/jokes/search?query=${word}`)
         .expect('status', 200)
         .expect('bodyContains', word)
     })
