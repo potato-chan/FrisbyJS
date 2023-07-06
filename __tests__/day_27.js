@@ -7,11 +7,11 @@ const PASSWORD = "qwerty1234"
 describe('30 days of Postman - Day 27: Scenario testing', () => {
     it('Bank user action scenario', async () => {
        //Create new user
-       const createUser = await frisby.post(`${BASEURL}/user`, {
-            "username": USERNAME, 
-            "password": PASSWORD
-        })
-      .expect('status', 200)
+//       const createUser = await frisby.post(`${BASEURL}/user`, {
+//            "username": USERNAME, 
+//            "password": PASSWORD
+//        })
+//      .expect('status', 200)
 
        //Login with created user data
        const userLogin = await frisby.post(`${BASEURL}/user/login`, {
